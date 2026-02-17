@@ -44,27 +44,36 @@ nav a {
 /* Slider */
 .slider {
     width: 100%;
-    height: 350px;
+    height: 380px;
     overflow: hidden;
 }
 
 .slides {
     display: flex;
     width: 400%;
-    animation: slide 16s infinite;
+    animation: slide 20s infinite;
 }
 
 .slides img {
     width: 100%;
-    height: 350px;
+    height: 380px;
     object-fit: cover;
 }
 
+/* Slow Smooth Animation */
 @keyframes slide {
     0% { transform: translateX(0%); }
+    20% { transform: translateX(0%); }
+
     25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); }
+
     50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); }
+
     75% { transform: translateX(-300%); }
+    95% { transform: translateX(-300%); }
+
     100% { transform: translateX(0%); }
 }
 
@@ -121,7 +130,7 @@ input, textarea {
 <body>
 
 <header>
-    <img src="logo.jpg" alt="School Logo" class="logo">
+    <img src="logo.jpg.jpeg" alt="School Logo" class="logo">
     <h1>Laxmi Narain Public School</h1>
     <p>Fultakiya Bazar, Kesariya, East Champaran, Bihar - 845424</p>
     <h3>Admission Open 2026-27</h3>
@@ -133,13 +142,13 @@ input, textarea {
     <a href="#contact">Contact</a>
 </nav>
 
-<!-- Slider Section -->
+<!-- Slider -->
 <div class="slider">
     <div class="slides">
-        <img src="slide1.jpg">
-        <img src="slide2.jpg">
-        <img src="slide3.jpg">
-        <img src="slide4.jpg">
+        <img src="slide1.jpg.jpeg">
+        <img src="slide2.jpg.jpeg">
+        <img src="slide3.jpg.jpeg">
+        <img src="slide4.jpg.jpeg">
     </div>
 </div>
 

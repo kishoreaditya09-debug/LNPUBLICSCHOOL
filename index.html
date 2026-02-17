@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Laxmi Narain Public School</title>
 
+<!-- Stylish Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
 }
 
@@ -21,16 +24,38 @@ body {
 
 /* Header */
 header {
-    background: #0d47a1;
+    background: linear-gradient(135deg, #0d47a1, #1565c0);
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px 20px;
+}
+
+header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+header p {
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+header h3 {
+    margin-top: 10px;
+    background: #ff9800;
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 16px;
 }
 
 /* Navigation */
 nav {
     background: #1565c0;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
 }
 
@@ -38,20 +63,25 @@ nav a {
     color: white;
     margin: 15px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc00;
 }
 
 /* Slider */
 .slider {
     position: relative;
     width: 100%;
-    height: 380px;
+    height: 400px;
     overflow: hidden;
 }
 
 .slider img {
     width: 100%;
-    height: 380px;
+    height: 400px;
     object-fit: cover;
     position: absolute;
     opacity: 0;
@@ -64,24 +94,32 @@ nav a {
 
 /* Sections */
 section {
-    padding: 20px;
+    padding: 25px;
     background: white;
     margin: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 h2 {
     color: #0d47a1;
+    margin-bottom: 10px;
 }
 
-/* Button */
+/* Buttons */
 button {
     background: #0d47a1;
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1565c0;
 }
 
 /* WhatsApp Button */
@@ -91,8 +129,9 @@ button {
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     margin-top: 10px;
+    font-weight: 600;
 }
 
 /* Footer */
@@ -100,13 +139,18 @@ footer {
     background: #0d47a1;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
+    margin-top: 20px;
 }
 
+/* Form */
 input, textarea {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
 }
 </style>
 </head>
@@ -136,16 +180,15 @@ input, textarea {
 
 <section id="about">
     <h2>About Our School</h2>
-    <p>Laxmi Narain Public School was established in 2019.
-    The school is affiliated with CBSE Board and offers education
-    from Nursery to Class 8.</p>
-    <p>Facilities include Computer Lab, Library, and Smart Classes.</p>
+    <p>Laxmi Narain Public School was established in 2019 and is affiliated with CBSE Board. 
+    The school offers education from Nursery to Class 8.</p>
+    <p>Facilities include Computer Lab, Library, and Smart Classes to ensure quality education.</p>
 </section>
 
 <section id="director">
     <h2>Director's Message</h2>
     <p><strong>Kaushal Kishore Prasad</strong></p>
-    <p>Our mission is to provide quality education with discipline and moral values.</p>
+    <p>Our mission is to provide quality education with discipline, moral values, and overall development of students.</p>
 </section>
 
 <section id="contact">
@@ -177,7 +220,7 @@ input, textarea {
     © 2026 Laxmi Narain Public School | All Rights Reserved
 </footer>
 
-<!-- JavaScript for Smooth Slide -->
+<!-- Smooth Auto Slider Script -->
 <script>
 let slides = document.querySelectorAll(".slider img");
 let index = 0;
@@ -186,7 +229,7 @@ setInterval(() => {
     slides[index].classList.remove("active");
     index = (index + 1) % slides.length;
     slides[index].classList.add("active");
-}, 4000); // 4 seconds per slide
+}, 4000);
 </script>
 
 </body>

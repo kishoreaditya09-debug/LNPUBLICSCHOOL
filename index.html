@@ -43,38 +43,23 @@ nav a {
 
 /* Slider */
 .slider {
+    position: relative;
     width: 100%;
     height: 380px;
     overflow: hidden;
 }
 
-.slides {
-    display: flex;
-    width: 400%;
-    animation: slide 20s infinite;
-}
-
-.slides img {
+.slider img {
     width: 100%;
     height: 380px;
     object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-/* Slow Smooth Animation */
-@keyframes slide {
-    0% { transform: translateX(0%); }
-    20% { transform: translateX(0%); }
-
-    25% { transform: translateX(-100%); }
-    45% { transform: translateX(-100%); }
-
-    50% { transform: translateX(-200%); }
-    70% { transform: translateX(-200%); }
-
-    75% { transform: translateX(-300%); }
-    95% { transform: translateX(-300%); }
-
-    100% { transform: translateX(0%); }
+.slider img.active {
+    opacity: 1;
 }
 
 /* Sections */
@@ -118,7 +103,6 @@ footer {
     padding: 10px;
 }
 
-/* Form */
 input, textarea {
     width: 100%;
     padding: 10px;
@@ -142,14 +126,12 @@ input, textarea {
     <a href="#contact">Contact</a>
 </nav>
 
-<!-- Slider -->
+<!-- Smooth Fade Slider -->
 <div class="slider">
-    <div class="slides">
-        <img src="slide1.jpg.jpeg">
-        <img src="slide2.jpg.jpeg">
-        <img src="slide3.jpg.jpeg">
-        <img src="slide4.jpg.jpeg">
-    </div>
+    <img src="slide1.jpg.jpeg" class="active">
+    <img src="slide2.jpg.jpeg">
+    <img src="slide3.jpg.jpeg">
+    <img src="slide4.jpg.jpeg">
 </div>
 
 <section id="about">
@@ -157,16 +139,13 @@ input, textarea {
     <p>Laxmi Narain Public School was established in 2019.
     The school is affiliated with CBSE Board and offers education
     from Nursery to Class 8.</p>
-
-    <p>Facilities include Computer Lab, Library, and Smart Classes
-    to ensure quality education.</p>
+    <p>Facilities include Computer Lab, Library, and Smart Classes.</p>
 </section>
 
 <section id="director">
     <h2>Director's Message</h2>
     <p><strong>Kaushal Kishore Prasad</strong></p>
-    <p>Our mission is to provide quality education with discipline,
-    moral values, and overall development of students.</p>
+    <p>Our mission is to provide quality education with discipline and moral values.</p>
 </section>
 
 <section id="contact">
@@ -192,12 +171,23 @@ input, textarea {
         <textarea name="Message" placeholder="Your Message"></textarea>
         <button type="submit">Submit</button>
     </form>
-
 </section>
 
 <footer>
     © 2026 Laxmi Narain Public School | All Rights Reserved
 </footer>
+
+<!-- JavaScript for Smooth Slide -->
+<script>
+let slides = document.querySelectorAll(".slider img");
+let index = 0;
+
+setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+}, 4000); // 4 seconds per slide
+</script>
 
 </body>
 </html>
